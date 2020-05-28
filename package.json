@@ -4,7 +4,9 @@
   "description": "A fullstack books app",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --require babel-register server.js",
+    "start": "node_modules/.bin/sequelize db:migrate && nodemon --require babel-register server.js",
+    "migrate": "node_modules/.bin/sequelize db:migrate",
+    "dev": "NODE_ENV=development nodemon --require babel-register server.js",
     "test": "npm test"
   },
   "repository": {
@@ -32,6 +34,8 @@
     "mongoose": "^5.9.16",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "pg": "^8.2.1",
+    "sequelize": "^5.21.11",
     "validator": "^13.0.0"
   }
 }

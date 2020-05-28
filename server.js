@@ -1,5 +1,7 @@
 import express from "express";
 import passport from "passport";
+import passportJwt from "./middleware/passport-jwt";
+import router from "./routes/index";
 
 const app = express();
 const port = process.env.PORT || 5000; // local port or heroku port if hosted
@@ -12,6 +14,10 @@ app.use(express.json());
 
 // passport
 app.use(passport.initialize());
+passportJwt(passport);
+
+// @router configuration
+app.use(router);
 
 // @router configuration
 app.use((res) => {
