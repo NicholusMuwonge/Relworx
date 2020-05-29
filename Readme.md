@@ -1,4 +1,12 @@
-# Relworx
+
+## Book Management App
+
+### How to test out this implementation
+- Clone this app and cd into the directory
+- Setup env variables as demonstrated in the env_example by creating a .env file
+- Run   `npm install ` . You may need to install Sequelize globally `npm i sequelize-cli`
+- npm start to run migrations and launch off application.
+
 
 User Authentication
 Register
