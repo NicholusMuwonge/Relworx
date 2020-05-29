@@ -1,7 +1,6 @@
 import express from "express";
 import passport from "passport";
 import Book from "../../controllers/Book";
-import isAuth from "../../middleware/isAuth";
 import { checkingBook } from "../../middleware/book";
 
 const book = new Book();
