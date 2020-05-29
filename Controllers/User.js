@@ -30,7 +30,7 @@ class UserController {
     const newUser = {
       username: req.body.username,
       email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 10), //salt password
+      password: bcrypt.hashSync(req.body.password ? req.body.password : "", 10), //salt password
     };
 
     const { errors, isValid } = signupvalidation(req.body);
@@ -64,7 +64,7 @@ class UserController {
     } catch (error) {
       return res.status(500).json({ error: error.message });
     }
-}
+  }
 
   /**
    * user login

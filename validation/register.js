@@ -1,19 +1,6 @@
 import Validator from "validator";
 import isEmpty from "is-empty";
 
-export const check = async (req, res, next) => {
-  try {
-    const userEmail = await User.findOne({ where: { email: req.body.email } });
-    if (userEmail)
-      return res
-        .status(409)
-        .json({ status: 409, error: "email is already exist." });
-    next();
-  } catch (error) {
-    res.status(500).json({ error });
-  }
-};
-
 function validateRegisterInput(data) {
   let errors = {};
   //  convert null for empty field to empty string

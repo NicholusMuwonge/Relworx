@@ -30,6 +30,8 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "is-empty": "^1.2.0",
+    "is-image-url": "^1.1.8",
+    "isbn-validate": "^1.0.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.16",
     "passport": "^0.4.1",

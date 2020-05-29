@@ -21,7 +21,7 @@ app.use(router);
 
 // @router configuration
 app.use((res) => {
-  res.status(404).send({
+  return res.status(404).json({
     status: 404,
     error: "resource not found",
   });
