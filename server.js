@@ -1,9 +1,11 @@
 import express from "express";
 import passport from "passport";
 import passportJwt from "./middleware/passport-jwt";
+import cors from 'cors';
 import router from "./routes/index";
 
 const app = express();
+app.use(cors())// Allowing client to access the endpoints
 const port = process.env.PORT || 5000; // local port or heroku port if hosted
 app.use(
   express.urlencoded({
