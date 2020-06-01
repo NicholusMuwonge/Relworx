@@ -92,7 +92,7 @@ class UserController {
           }
           const payload = {
             id: foundUser.id,
-            email: foundUser.email,
+            username: foundUser.username,
           };
           const token = jwt.sign(payload, secretKey, expirationTime);
           res.status(200).json({ status: 200, token, user: payload });

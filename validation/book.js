@@ -22,16 +22,16 @@ const validateBooksInput = (data) => {
   // ISBN checks
   if (Validator.isEmpty(data.isbn)) {
     errors.isbn = "ISBN field is required";
-  } else if (isbnValidator.Validate(data.isbn) === false) {
+  } else if (13<(data.isbn.length)>20) {
     errors.isbn = "ISBN is invalid";
   }
   // Author checks
   if (Validator.isEmpty(data.author)) {
     errors.author = "Author field is required";
   }
-
+  const regForUrl = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
   //   Url Checks
-  if (!isImageUrl(data.image)) {
+  if (!(data.image).match(regForUrl)) {
     errors.image = "Image link is invalid";
   }
 

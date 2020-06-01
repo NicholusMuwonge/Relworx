@@ -20,7 +20,7 @@ class BookController {
     // @initial book
     const newBook = {
       title: req.body.title,
-      image: req.body.image,
+      image: req.body.image===""?"https://picsum.photos/200/300":req.body.image,
       author: req.body.author,
       isbn: req.body.isbn,
       createdby: req.user.id,
